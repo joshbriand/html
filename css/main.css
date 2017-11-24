@@ -181,10 +181,7 @@ h2 {
 @media screen and (orientation: portrait) {
  #siteContent {
  width: 100vw;
- height: 650px;
- }
- #header {
-  height: 150px;
+ height: calc(100vh - 418px);
  }
  #slogan {
 	 height: auto;
@@ -232,4 +229,7 @@ h2 {
 	html {
 	  overflow: auto;
 	}
+  h1 {
+    margin: 0px;
+  }
 }
