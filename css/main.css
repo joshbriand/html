@@ -179,57 +179,57 @@ h2 {
 }
 
 @media screen and (orientation: portrait) {
- #siteContent {
- width: 100vw;
- height: calc(100vh - 418px);
- }
- #slogan {
-	 height: auto;
- }
- #joshbriand {
-	 display: table-row;
-	 font-size: 50px;
-	 width: 100%;
-	 text-align: center;
- }
- #contactLink, #merchLink, #webDevLink {
-  display: table-row;
- }
- h2 {
-  font-size: 35px;
- }
- #webDevContent, #merchContent, #contactContent {
-	 width: 100vw;
-	 overflow: scroll;
-	 height: auto;
- }
- #mobileSpacer {
-   display: flex;
-   height: 30px;
-	}
-	#spacer {
-  height: 30px;
-	}
-	#actualSlogan {
-	  font-size: 170px;
-	  width: 100vw;
-	}
-	.side {
-	  width: 5vw;
-	}
-	#content {
-	  width: 80vw;
-	  height: auto;
-	  font-size: 25px;
-	}
-	body {
-	  position:fixed;
-	  height: auto;
-	}
-	html {
-	  overflow: auto;
-	}
-  h1 {
-    margin: 0px;
+  #siteContent {
+  width: 100vw;
+  height: 92vh;
+  overflow-y: scroll;
   }
-}
+  #slogan {
+  height: auto;
+  }
+  #joshbriand {
+  display: table-row;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  }
+  #contactLink, #merchLink, #webDevLink {
+  display: table-row;
+  }
+  h2 {
+  font-size: 35px;
+  margin: 10px;
+  }
+  #webDevContent, #merchContent, #contactContent {
+  width: 100vw;
+  height: 92vh;
+  max-height: none;
+  min-height: 0;
+  }
+  #mobileSpacer {
+  display: flex;
+  height: 30px;
+  }
+  #spacer {
+  height: 30px;
+  }
+  #actualSlogan {
+  font-size: 170px;
+  width: 100vw;
+  }
+  .side {
+  width: 2.5vw;
+  }
+  #content {
+  width: 90vw;
+  height: auto;
+  font-size: 32px;
+  }
+  body {
+  position:fixed;
+  height: auto;
+  }
+  h1 {
+  margin: 0px;
+  }
+  }
