@@ -189,7 +189,7 @@ h2 {
   }
   #joshbriand {
   display: table-row;
-  font-size: 50px;
+  font-size: 35px;
   width: 100%;
   text-align: center;
   }
@@ -206,6 +206,9 @@ h2 {
   max-height: none;
   min-height: 0;
   }
+  #webDevContent h2, #merchContent h2 {
+  margin: 0px;
+  }
   #mobileSpacer {
   display: flex;
   height: 30px;
@@ -218,10 +221,10 @@ h2 {
   width: 100vw;
   }
   .side {
-  width: 2.5vw;
+  width: 1.5vw;
   }
   #content {
-  width: 90vw;
+  width: 94vw;
   height: auto;
   font-size: 32px;
   }
