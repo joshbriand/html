@@ -1,3 +1,5 @@
+#how are shows booked?  by artist, by host, by SD?
+
 from flask import (
     Flask, render_template, request, redirect, jsonify, url_for, flash)
 from flask import session as login_session
@@ -20,21 +22,13 @@ app = Flask(__name__)
 
 CLIENT_ID = json.loads(
     open('google_client_secrets.json', 'r').read())['web']['client_id']
-APPLICATION_NAME = "Recipe Application"
+APPLICATION_NAME = "Sidedoor Project"
 
-engine = create_engine('sqlite:///recipeindex.db')
+engine = create_engine('sqlite:///sidedoor.db')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-
-# list of cuisines and meals used in app
-cuisines = [
-    "All", "American", "German", "Indian", "Japanese", "Mexican",
-    "Middle Eastern", "Vegan"]
-meals = [
-    "All", "Appetizer", "Breakfast", "Dessert", "Dinner", "Drink", "Lunch",
-    "Salad", "Side", "Snack"]
 
 
 def generateState():
@@ -43,6 +37,79 @@ def generateState():
                     for x in xrange(32))
     login_session['state'] = state
     return state
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/recipes/<int:user_id>', methods=['GET', 'POST'])
+
+#Home
+@app.route('/', methods=['GET', 'POST'])
+
+#Host
+@app.route('/host/<int:host_id>', methods=['GET', 'POST'])
+
+#Host - Availability
+@app.route('/host/<int:host_id>/availability', methods=['GET', 'POST'])
+
+#Host - Booked Shows
+@app.route('/host/<int:host_id>/booked', methods=['GET', 'POST'])
+
+#Host - Edit Info
+@app.route('/host/<int:host_id>/edit', methods=['GET', 'POST'])
+
+#Host - Artist Availability in Area
+@app.route('/host/<int:host_id>/artist_availability', methods=['GET', 'POST'])
+
+#Guest
+@app.route('/guest/<int:guest_id>', methods=['GET', 'POST'])
+
+#Guest - Tickets Purchased
+@app.route('/guest/<int:guest_id>/tickets', methods=['GET', 'POST'])
+
+#Guest - Ticket
+@app.route('/guest/<int:guest_id>/<int:show_id>/ticket', methods=['GET', 'POST'])
+
+#Guest - Edit Info
+@app.route('/guest/<int:guest_id>/edit', methods=['GET', 'POST'])
+
+#Artist
+@app.route('/artist/<int:artist_id>', methods=['GET', 'POST'])
+
+#Artist - Availability
+@app.route('/artist/<int:artist_id>/availability', methods=['GET', 'POST'])
+
+#Artist - Booked Shows
+@app.route('/artist/<int:artist_id>/booked', methods=['GET', 'POST'])
+
+#Artist - Edit Info
+@app.route('/artist/<int:artist_id>/edit', methods=['GET', 'POST'])
+
+#Artist - Host Availability in Area
+@app.route('/artist/<int:artist_id>/host_availability', methods=['GET', 'POST'])
+
+#Admin
+@app.route('/admin/<int:admin_id>', methods=['GET', 'POST'])
+
+#Admin - Host Availability
+@app.route('/admin/<int:admin_id>/host_availability', methods=['GET', 'POST'])
+
+#Admin - Artist Availability
+@app.route('/admin/<int:admin_id>/artist_availability', methods=['GET', 'POST'])
+
+#Admin - Booked Shows
+@app.route('/admin/<int:admin_id>/booked', methods=['GET', 'POST'])
+
+#Admin - Edit
+@app.route('/admin/<int:admin_id>/edit', methods=['GET', 'POST'])
+
+#Admin - Show Settlement
+@app.route('/admin/<int:admin_id>/<int:show_id>/settlement', methods=['GET', 'POST'])
+
+#Host - Show Settlement
+@app.route('/host/<int:host_id>/<int:show_id>/settlement', methods=['GET', 'POST'])
+
+#Artist - Show Settlement
+@app.route('/artist/<int:artist_id>/<int:show_id>/settlement', methods=['GET', 'POST'])
 
 
 @app.route('/gconnect', methods=['POST'])
