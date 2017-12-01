@@ -77,9 +77,6 @@ body {
  overflow-y: hidden;
  }
 
-#siteContent {
-  overflow: hidden;
-}
 
 #slogan {
 	 height: 81vh;
@@ -155,9 +152,9 @@ body {
  display: none;
  max-height: 65vh;
  min-height: 20px;
- overflow: scroll;
+ overflow: hidden;
  align-items:flex-start;
-align-content:flex-start;
+ align-content:flex-start;
 }
 
 #webDev, #merch, #contact {
